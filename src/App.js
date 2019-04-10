@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+// import Header from '../components/Header'
+import Inputs from './Inputs'
+// import SongList from '../components/SongList'
+// import Song from '../components/Song'
+
+
 
 class App extends Component {
+  constructor() { 
+    super()
+    this.state = {
+      songs:[]
+    }
+  }
+
+  updateList(){
+
+  }
+
+  addSong(){
+
+  }
+
+  deleteSong(){
+
+  }
+
+  componentDidMount(){
+
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+       <Inputs/>
       </div>
     );
   }
