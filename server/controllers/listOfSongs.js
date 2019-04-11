@@ -28,5 +28,22 @@ module.exports = {
 
     listOfSongs.push(newSong)
     res.send(listOfSongs)
+  },
+
+  delete: (req, res ) => {
+    let id = req.params.id
+    console.log(id)
+    let index = listOfSongs.findIndex((song) => { 
+      return +req.params.id === +song.id
+        
+      
+    })
+  
+    console.log(index)
+   
+   listOfSongs.splice(index,1) 
+   res.status(200).send(listOfSongs)
+
   }
+
 }

@@ -7,6 +7,7 @@ import SongList from './components/SongList'
 import AddSong from './components/AddSong'
 import axios from 'axios'
 import { send } from 'q';
+// import Delete from './components/DeleteSong'
 
 
 
@@ -38,12 +39,21 @@ class App extends Component {
 
   }
 
+  deleteSong = (songsId) => {
+    console.log(songsId)
+    axios.delete(`/api/songs/${songsId}`).then((res) =>{
+      this.setState({songs: res.data})
+    })
+  }
+
   render() {
     return (
       <div className="App">
        {/* <Inputs/> */}
        <AddSong createNewSong= {this.createNewSong}/> 
-       <SongList songInfo= {this.state.songs}/> 
+       <SongList songInfo= {this.state.songs} deleteSong = {this.deleteSong}/> 
+       
+
       </div>
     );
   }

@@ -8,18 +8,18 @@ import Song from './Song'
 
  
 
-  // addSong = (newSong) => {
-  //   axios.post('/api/songs', newSong).then(res => { 
-  //     this.setState({
-  //       songs: res.data
-  //     })
-  //   }).catch(err =>
-  //     console.log('we have a add song error',err))
-  // }
+  addSong = (newSong) => {
+    axios.post('/api/songs', newSong).then(res => { 
+      this.setState({
+        songs: res.data
+      })
+    }).catch(err =>
+      console.log('we have a add song error',err))
+  }
 
   render (){
    let music = this.props.songInfo.map((song) => {
-    return < Song songInfo = {song} />
+    return < Song songInfo = {song} deleteSong = {this.props.deleteSong} />
    }) 
     return(
       <div> 
