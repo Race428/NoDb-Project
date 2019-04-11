@@ -3,8 +3,11 @@ import React, { Component } from 'react';
 import './App.css';
 // import Header from '../components/Header'
 import Inputs from './Inputs'
-// import SongList from '../components/SongList'
+import SongList from '../server/listOfSongs'
 // import Song from '../components/Song'
+
+
+
 
 
 
@@ -36,6 +39,7 @@ class App extends Component {
     return (
       <div className="App">
        <Inputs/>
+       <SongList/> 
       </div>
     );
   }
