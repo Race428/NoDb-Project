@@ -10,7 +10,7 @@ app.use(express.json())
 
 
 app.get('/api/songs',SongList.get )
-app.post('/api/animals', SongList.create)
+app.post('/api/songs', SongList.create)
 
 app.listen(port, () =>{
   console.log('listening on', port)

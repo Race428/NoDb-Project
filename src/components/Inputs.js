@@ -13,7 +13,11 @@ class Inputs extends Component {
   render(){
     return(
       <div>
-      
+        <input className = 'name' 
+        placeholder = 'Song Name'
+        /> 
+        <input className = 'artist' 
+        placeholder = 'Artist name'/> 
       </div>
       
     )

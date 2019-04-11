@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 // import Header from '../components/Header'
-import Inputs from './Inputs'
+import Inputs from './components/Inputs'
 import SongList from './components/SongList'
 import AddSong from './components/AddSong'
-
+import axios from 'axios'
+import { send } from 'q';
 
 
 
@@ -19,28 +20,30 @@ class App extends Component {
     }
   }
 
-  updateList(){
-
+  componentDidMount (){
+  
+    axios.get('/api/songs').then(res => {
+      console.log(res)
+      this.setState({
+        songs: res.data
+      })
+    }).catch(err => console.log('We have an issue here:',err))
   }
 
-  addSong(){
-
-  }
-
-  deleteSong(){
-
-  }
-
-  componentDidMount(){
+  createNewSong = (name, artist)=> {
+    axios.post('/api/songs', {name: name ,
+      artist : artist}).then((res) => { 
+        this.setState({songs: res.data})
+      })
 
   }
 
   render() {
     return (
       <div className="App">
-       <Inputs/>
-       <SongList/> 
-       <AddSong/> 
+       {/* <Inputs/> */}
+       <AddSong createNewSong= {this.createNewSong}/> 
+       <SongList songInfo= {this.state.songs}/> 
       </div>
     );
   }

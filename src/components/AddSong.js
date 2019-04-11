@@ -7,36 +7,37 @@ constructor(){
   super ()
 
   this.state = { 
-    song : '',
+    name : '',
     artist: ''
   }
 }
 
-handleChange = e => {
-  let { value, song } = e.target
+handleChange = (e , key) => {
+  
+  let { value } = e.target
   this.setState ({
-    [song] : value 
+    [key] : value 
   })
 }
 
-handleClick = () => {
-  let newSong = this.state
 
-  this.props.createNewSong(newSong)
+
+handleClick = () => {
+  this.props.createNewSong(this.state.name, this.state.artist)
 }
 
 render () { 
   return (
     <div>
-      <input onChange = {this.handleChange}
+      <input onChange = { (e) => this.handleChange(e, 'name')}
       name = 'song'
       type = 'text'
       placeholder = 'song name'/> 
-      <input onChange = {this.handleChange}
+      <input onChange = { (e) => this.handleChange(e,'artist')}
       name = 'artist'
       type = 'text'
       placeholder = 'artist name' /> 
-      <button onClick = { this.handleClick}>Add song</button>
+      <button onClick = {this.handleClick}>Add song</button>
     </div>
   )
 }
