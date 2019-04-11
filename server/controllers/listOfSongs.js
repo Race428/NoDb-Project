@@ -22,4 +22,11 @@ module.exports = {
   get: (req,res) => { 
     res.send(listOfSongs)
   },
+  create: (req, res) => {
+    let newSong = req.body 
+    newSong.id = id++
+
+    listOfSongs.push(newSong)
+    res.send(listOfSongs)
+  }
 }

@@ -12,11 +12,21 @@ export default class SongList extends Component {
   }
 
   componentDidMount (){
+  
     axios.get('/api/songs').then(res => {
       this.setState({
         songs: res.data
       })
     }).catch(err => console.log('We have an issue here:',err))
+  }
+
+  AddSong = (newSong) => {
+    axios.post('/api/songs', newSong).then(res => { 
+      this.setState({
+        songs: res.data
+      })
+    }).catch(err =>
+      console.log('we have a add song error',err))
   }
 
   render (){

@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 // import Header from '../components/Header'
 import Inputs from './Inputs'
-import SongList from '../server/listOfSongs'
-// import Song from '../components/Song'
+import SongList from './components/SongList'
+import AddSong from './components/AddSong'
 
 
 
@@ -40,6 +40,7 @@ class App extends Component {
       <div className="App">
        <Inputs/>
        <SongList/> 
+       <AddSong/> 
       </div>
     );
   }
