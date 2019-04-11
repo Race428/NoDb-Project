@@ -46,12 +46,20 @@ class App extends Component {
     })
   }
 
+  //needs to update the name and artist and know when clicking the specific id button 
+  editSong = (songsId, name, artist) => {
+    console.log(songsId)
+    axios.put(`/api/songs/${songsId}`,{ name: name, artist: artist}).then((res) => {
+      this.setState({songs: res.data})
+    })
+  }
+
   render() {
     return (
       <div className="App">
        {/* <Inputs/> */}
        <AddSong createNewSong= {this.createNewSong}/> 
-       <SongList songInfo= {this.state.songs} deleteSong = {this.deleteSong}/> 
+       <SongList songInfo= {this.state.songs} deleteSong = {this.deleteSong} editSong = { this.editSong}/> 
        
 
       </div>

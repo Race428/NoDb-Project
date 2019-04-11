@@ -12,6 +12,7 @@ app.use(express.json())
 app.get('/api/songs',SongList.get )
 app.post('/api/songs', SongList.create)
 app.delete('/api/songs/:id',SongList.delete)
+// app.put('/api/songs', SongList.put)
 
 app.listen(port, () =>{
   console.log('listening on', port)
