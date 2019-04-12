@@ -28,7 +28,12 @@ songChange = (e , key) => {
 
 
 handleClick = () => {
-  this.props.editSong(this.state.name,this.state.artist)
+  this.props.editSong(this.props.songInfo.id,this.state.name,this.state.artist)
+  this.setState({
+    name:'',
+    artist:''
+  })
+
 }
 
 render(){
@@ -37,7 +42,7 @@ render(){
   return (
 
   <div className = 'name'>
-    <h1>{this.props.songInfo.name} {this.props.songInfo.artist}
+    <h1>{this.props.songInfo.name} -  {this.props.songInfo.artist}
     <button onClick = {() => this.props.deleteSong(this.props.songInfo.id)}>Delete Song </button>
     
     </h1>   
@@ -47,12 +52,14 @@ render(){
       name = 'song'
       type = 'text'
       placeholder = 'new song name'
+      value = {this.state.name}
       /> 
     <input onChange = {(e) => this.songChange(e,
       'artist')}
       name ='artist'
       type ='text'
       placeholder = 'new artist name'
+      value = {this.state.artist}
       />
       <button onClick = {this.handleClick}>Change</button>
     

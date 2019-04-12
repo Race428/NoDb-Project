@@ -19,7 +19,7 @@ import Song from './Song'
 
   render (){
    let music = this.props.songInfo.map((song) => {
-    return < Song songInfo = {song} deleteSong = {this.props.deleteSong} editSong = {this.props.editSong} />
+    return < Song songInfo = {song} deleteSong = {this.props} />
    }) 
     return(
       <div> 

@@ -47,13 +47,16 @@ module.exports = {
   },
 
   update: (req, res) => {
+    
     let { id } = req.params
     let editSong = req.body
-    editSong.id = id
+  
 
     let index = listOfSongs.findIndex(a => +a.id === +id)
     listOfSongs.splice(index,1, editSong)
     res.send(listOfSongs)
   }
+
+
 
 }
