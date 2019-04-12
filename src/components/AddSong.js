@@ -44,7 +44,7 @@ render () {
       type = 'text'
       placeholder = 'artist name'
       value = {this.state.artist} /> 
-      <button onClick = {this.handleClick}>Add song</button>
+      <button disabled= {this.state.name === '' && this.state.artist ===''} onClick = {this.handleClick}>Add song</button>
     </div>
   )
 }

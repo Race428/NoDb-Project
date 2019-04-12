@@ -2,11 +2,23 @@
   margin: 0px;
   padding: 0px;
   margin: 0 auto; 
+  
 }
 
 html {
   /* Size of largest container or bigger */
   min-width: 1080px;
+}
+
+input {
+  border-radius: 60px;
+  border: none; 
+  background-color: rgb(215, 208, 208);
+  color: black;
+}
+hr {
+  margin-left:30%;   
+  margin-right:30%;
 }
 
 .app { 
@@ -85,5 +97,11 @@ button {
   height: 30px;
   color: white;
   font-weight: bold;
+
+}
+
+button:disabled { 
+background-color : green; 
+
 
 }

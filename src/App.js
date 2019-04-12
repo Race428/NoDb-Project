@@ -64,6 +64,7 @@ class App extends Component {
 
         
         <section className = 'header'>
+            
           <div className = 'logo'>
             <img className = 'logoImage'src ='https://cdn.good-halal.com/wp-content/uploads/2017/06/12417655_1198236106857565_8590988678161408479_n-800x800.png'
             alt = 'master taco logo' /> 
@@ -73,18 +74,19 @@ class App extends Component {
             <h1 className = 'titleName'>MY TUNES</h1>
           </div>
         </section>
-        <hr></hr>
+        
 
         <section className = 'addSongs'>
           <h2><u>ADD SONGS </u></h2>
           <AddSong createNewSong= {this.createNewSong}/> 
+          
         </section>
-       <hr></hr>
+   <hr></hr>
         <section className = 'songList'>
           <SongList songInfo= {this.state.songs} deleteSong  = {this.deleteSong} editSong = { this.editSong}/> 
           <hr></hr>
         </section>
-        <hr></hr>
+    
       </section>
       
     
