@@ -24,6 +24,10 @@ handleChange = (e , key) => {
 
 handleClick = () => {
   this.props.createNewSong(this.state.name, this.state.artist)
+  this.setState ({
+    name:'',
+    artist:'',
+  })
 }
 
 render () { 
@@ -32,11 +36,14 @@ render () {
       <input onChange = { (e) => this.handleChange(e, 'name')}
       name = 'song'
       type = 'text'
-      placeholder = 'song name'/> 
+      placeholder = 'song name'
+      value = {this.state.name}
+      /> 
       <input onChange = { (e) => this.handleChange(e,'artist')}
       name = 'artist'
       type = 'text'
-      placeholder = 'artist name' /> 
+      placeholder = 'artist name'
+      value = {this.state.artist} /> 
       <button onClick = {this.handleClick}>Add song</button>
     </div>
   )
