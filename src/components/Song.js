@@ -42,7 +42,7 @@ render(){
   return (
 
   <div className = 'name'>
-    <h1>{this.props.songInfo.name} -  {this.props.songInfo.artist}
+    <h1>{this.props.songInfo.name} - {this.props.songInfo.artist}
     <button onClick = {() => this.props.deleteSong(this.props.songInfo.id)}>Delete Song </button>
     
     </h1>   

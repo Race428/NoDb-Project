@@ -59,15 +59,38 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-       {/* <Inputs/> */}
-       <AddSong createNewSong= {this.createNewSong}/> 
-       <SongList songInfo= {this.state.songs} deleteSong = {this.deleteSong} editSong = { this.editSong}/> 
-       
+      <section className = 'app'>
+        
+        <section className = 'header'>
+          <div className = 'logo'>
+            
+          </div>
+          <div className = 'myTunes'>
+          </div>
+        </section>
+        <hr></hr>
 
-      </div>
+        <section className = 'addSongs'>
+          <h2>ADD SONGS</h2>
+          <AddSong createNewSong= {this.createNewSong}/> 
+        </section>
+       <hr></hr>
+        <section className = 'songList'>
+          <SongList songInfo= {this.state.songs} deleteSong  = {this.deleteSong} editSong = { this.editSong}/> 
+          <hr></hr>
+        </section>
+        <hr></hr>
+      </section>
+      
+    
+    
+    
+    
+    
     );
   }
 }
 
 export default App;
+
+
